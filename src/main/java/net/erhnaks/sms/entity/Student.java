@@ -11,9 +11,9 @@ public class Student {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     @Column(name = "first_name", nullable = false)
-    private String FirstName;
+    private String firstName;
     @Column(name = "last_name", nullable = false)
-    private String LastName;
+    private String lastName;
     @Column(name = "age", nullable = false)
     private int age;
     @Column(name = "email", nullable = false)
@@ -25,8 +25,8 @@ public class Student {
 
     public Student(String firstName, String lastName, int age, String email) {
         super();
-        FirstName = firstName;
-        LastName = lastName;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.age = age;
         this.email = email;
     }
@@ -40,19 +40,19 @@ public class Student {
     }
 
     public String getFirstName() {
-        return FirstName;
+        return firstName;
     }
 
     public void setFirstName(String firstName) {
-        FirstName = firstName;
+        this.firstName = firstName;
     }
 
     public String getLastName() {
-        return LastName;
+        return lastName;
     }
 
     public void setLastName(String lastName) {
-        LastName = lastName;
+        this.lastName = lastName;
     }
 
     public int getAge() {
