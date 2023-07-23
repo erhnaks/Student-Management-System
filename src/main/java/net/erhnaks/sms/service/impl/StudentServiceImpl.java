@@ -12,7 +12,7 @@ public class StudentServiceImpl implements StudentService {
 
     private final StudentRepository repository;
 
-    public StudentServiceImpl(StudentRepository repository) { // @Todo Check If I need this line
+    public StudentServiceImpl(StudentRepository repository) {
         super();
         this.repository = repository;
     }
@@ -24,6 +24,16 @@ public class StudentServiceImpl implements StudentService {
 
     @Override
     public Student saveStudent(Student student) {
+        return repository.save(student);
+    }
+
+    @Override
+    public Student getStudentById(Long id) {
+        return repository.findById(id).get();
+    }
+
+    @Override
+    public Student updateStudent(Student student) {
         return repository.save(student);
     }
 }
